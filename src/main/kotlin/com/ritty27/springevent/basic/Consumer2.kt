@@ -12,7 +12,7 @@ class Consumer2 : ApplicationListener<PracticeEvent> {
     val logger = KotlinLogging.logger { }
 
     override fun onApplicationEvent(event: PracticeEvent) {
-        logger.info { "consumer2: ${LocalDateTime.now()}, message: ${event.message}" }
+        logger.info { "consumer2: ${LocalDateTime.now()}, message: ${event.message}, thread: ${Thread.currentThread()}" }
     }
 
 }

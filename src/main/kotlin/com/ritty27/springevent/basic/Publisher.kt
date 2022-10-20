@@ -14,9 +14,9 @@ class Publisher(
 
     fun publish(message: String) {
         val event = PracticeEvent(message)
-        applicationEventPublisher.publishEvent(event)
-
         logger.info { "producer: ${LocalDateTime.now()}, message: ${event.message}, thread: ${Thread.currentThread()}" }
+
+        applicationEventPublisher.publishEvent(event)
     }
 }
 
